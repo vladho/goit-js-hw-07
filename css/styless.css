@@ -1,0 +1,9 @@
+.gallery-categ {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.gallery-item:not(:last-child) {
+  margin-right: 30px;
+}
