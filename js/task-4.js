@@ -14,7 +14,7 @@
 //         counter += 1;
 //         counterValueRed.innerHTML = counter
 //     }
-    
+
 // }
 
 // counterRef.addEventListener("click", counterFunction)
@@ -23,20 +23,17 @@
 
 let counter = 0;
 
-const counterValueRed = document.querySelector("#value")
+const counterValueRed = document.querySelector("#value");
 
-const incrementRef = document.querySelector('button[data-action="increment"]')
-const decrementRef = document.querySelector('button[data-action="decrement"]')
+const incrementRef = document.querySelector('button[data-action="increment"]');
+const decrementRef = document.querySelector('button[data-action="decrement"]');
 
+incrementRef.addEventListener("click", (event) => {
+  counter += 1;
+  counterValueRed.innerHTML = counter;
+});
 
-incrementRef.addEventListener("click", event => {
-    counter += 1;
-    counterValueRed.innerHTML =  counter
-}
-)
-
-decrementRef.addEventListener("click", event => {
-    counter -= 1;
-    counterValueRed.innerHTML =  counter
-}
-)
+decrementRef.addEventListener("click", (event) => {
+  counter -= 1;
+  counterValueRed.innerHTML = counter;
+});

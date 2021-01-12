@@ -1,10 +1,10 @@
 const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
+  "Картошка",
+  "Грибы",
+  "Чеснок",
+  "Помидоры",
+  "Зелень",
+  "Приправы",
 ];
 
 // ingredients.forEach(elem => {
@@ -15,21 +15,20 @@ const ingredients = [
 //     categRef.appendChild(itemRef)
 // }
 // )
-   
+
 //create function
 
-const createCategForIngredient = ingredient => {
-    
-    const itemRef = document.createElement("li")
-    itemRef.textContent = ingredient;
+const createCategForIngredient = (ingredient) => {
+  const itemRef = document.createElement("li");
+  itemRef.textContent = ingredient;
 
-    const categRef = document.querySelector("#ingredients")
-    categRef.appendChild(itemRef)
+  const categRef = document.querySelector("#ingredients");
+  categRef.appendChild(itemRef);
 
-        return categRef
-}
+  return categRef;
+};
 
-const createListForIngredients = ingredients =>
-    ingredients.forEach(ingredient => createCategForIngredient(ingredient))
+const createListForIngredients = (ingredients) =>
+  ingredients.forEach((ingredient) => createCategForIngredient(ingredient));
 
-createListForIngredients(ingredients)
+createListForIngredients(ingredients);
