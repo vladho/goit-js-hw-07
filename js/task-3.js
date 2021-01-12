@@ -16,7 +16,7 @@ const images = [
   },
 ];
 
-   //option  - 1 .. не позаданию :( 
+   //option  - 1 .. не по заданию :( 
 
 // images.forEach(image => {
 //     const createImgRef = document.createElement("img")
