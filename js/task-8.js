@@ -4,8 +4,11 @@ const destroyRef = document.querySelector('button[data-action="destroy"]');
 const boxesRef = document.querySelector("#boxes");
 
 const createBoxes = (amount) => {
-    // создачем счетчик
-    for (let i = 0; i < amount; i += 1) {
+  boxesRef.textContent = "";
+  const boxArray = []
+  
+// создачем счетчик
+  for (let i = 0; i < amount; i += 1) {
         //создаем переменые для цветов
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
@@ -23,11 +26,14 @@ const createBoxes = (amount) => {
         (createDiv.style.backgroundColor = `rgb(${Math.pow(r * i, i) % 256},${Math.pow(g * i, i) % 256
           },${Math.pow(b * i, i) % 256})`);
       }
-        // записываем созданные дивки в наш бокс
-      console.log(createDiv)
-      // boxesRef.textContent = `${createDiv}`;
-      
-    }
+        // созданные боксы добавляем в массив
+        
+    boxArray.push(createDiv)     
+  }
+
+  // полученый массив вставляем в разметку
+
+  boxesRef.append(...boxArray)
 };
 
 const destroyBoxes = () => {
