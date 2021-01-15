@@ -13,16 +13,20 @@ const createBoxes = (amount) => {
 
         // создаем блок с нужными стилем
         const createDiv = document.createElement("div");
-        createDiv.style.width = `${30 + i * 10}`;
-        createDiv.style.height = `${30 + i * 10}`;
+        createDiv.style.width = `${30 + i * 10}px`;
+        createDiv.style.height = `${30 + i * 10}px`;
 
         // делаем проверку на черный цвет (при умножении на ноль)
-        i === 0
-            ? (createDiv.style.backgroundColor = `rgb(${r},${g},${b})`)
-            : (createDiv.style.backgroundColor = `rgb(${Math.pow(r * i, i) % 256},${Math.pow(g * i, i) % 256
-                },${Math.pow(b * i, i) % 256})`);
+      if (i === 0) {
+        (createDiv.style.backgroundColor = `rgb(${r},${g},${b})`)
+      } else {
+        (createDiv.style.backgroundColor = `rgb(${Math.pow(r * i, i) % 256},${Math.pow(g * i, i) % 256
+          },${Math.pow(b * i, i) % 256})`);
+      }
         // записываем созданные дивки в наш бокс
-        boxesRef.appendChild(createDiv);
+      console.log(createDiv)
+      // boxesRef.textContent = `${createDiv}`;
+      
     }
 };
 
